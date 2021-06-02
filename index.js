@@ -29,8 +29,8 @@ const userAdd = () => {
         Real adlar üçün istifa etmək üçün
     */
 
-    if (getGender === "man") {
-        name = getName(genderList.woman.womanName)
+    if (getGender==="man") {
+        name = getName(genderList.man.manName)
         surname = getSurname(genderList.man.manName, genderList.man.surnameManEnd);
         email = surname.toLowerCase() + getMail(domainItem, mailItem);
     } else {
@@ -42,12 +42,13 @@ const userAdd = () => {
 
     /*
         Təsadüfü random adlardan istifa etmək üçün
+        */
 
-        name      = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-        surname   = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15); 
-        email     = Math.random().toString(36).substring(2, 15) + getMail(domainItem, mailItem);
+        // name      = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+        // surname   = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15); 
+        // email     = Math.random().toString(36).substring(2, 15) + getMail(domainItem, mailItem);
 
-    */
+    
 
     const userInfo = {
         name: name,
@@ -56,6 +57,10 @@ const userAdd = () => {
         birthday: birthday
     }
 
+    const table = "<tr><td>"+userInfo.name+"</td><td>"+userInfo.surname+"</td><td>"+userInfo.email+"</td><td>"+userInfo.birthday+"</td></tr>";
+    // console.table(table)
+
+    document.getElementById("userList").innerHTML += table;
     console.log(userInfo);
 
 }
