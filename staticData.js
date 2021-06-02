@@ -34,4 +34,4 @@ const mailItem = [
     '@google'
 ];
 
-export {domainItem,mailItem}
+export {domainItem, mailItem}

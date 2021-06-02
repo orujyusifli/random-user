@@ -1,7 +1,7 @@
 /**
- * İlk hərifi böyük etmək üçün funksiya 
- * @param {*} s 
- * @returns 
+ * İlk hərifi böyük etmək üçün funksiya
+ * @param {*}
+ * @returns
  */
 const getCapitalize = (s) => {
     if (typeof s !== 'string') return ''
@@ -9,9 +9,9 @@ const getCapitalize = (s) => {
 }
 
 /**
- *  Bu funksiya random dəyər yaratmaq üçün istifadə edilir
- * @param {*} max 
- * @returns 0 - max dəyərinə kimi random rəqəmlər geri 
+ * Bu funksiya random dəyər yaratmaq üçün istifadə edilir
+ * @param {*} max
+ * @returns 0 - max dəyərinə kimi random rəqəmlər geri
  */
 
 const getRandom = (max) => {
@@ -19,15 +19,11 @@ const getRandom = (max) => {
 }
 
 /**
- * 
- * @getMail fuksiyas
-   e-mail sonluğu yaratmaq üçün istifadə edilir funksiya iki dəyər alır
- * @param {Domain adı  } domainItem 
- * @param {Domain sonluğu } mailItem 
+ * @getMail fuksiyas e-mail sonluğu yaratmaq üçün istifadə edilir funksiya iki dəyər alır
+ * @param {Domain adı  } domainItem
+ * @param {Domain sonluğu } mailItem
  * Dəyərlərə nameList.js fayldan çata bilərsiz
- * 
  * @returns Təsadüfü
- * 
  */
 
 const getMail = (domainItem, mailItem) => {
@@ -35,30 +31,23 @@ const getMail = (domainItem, mailItem) => {
 }
 
 /**
- * 
- * @param nameItem 
+ * @param nameItem
  * @returns Təsadüfü ad
  */
 
-const getName = (nameItem)=>{
+const getName = (nameItem) => {
     return nameItem[getRandom(nameItem.length)];
 }
 
 /**
  * Funksiya soyad yaratmaq üçün istifadə edilir
- * @param {*} nameItem 
- * @param {*} surnameEnd 
+ * @param {*} nameItem
+ * @param {*} surnameEnd
  * @returns Təsadüfü soyad təyin edir
  */
 
-const getSurname = (nameItem,surnameEnd)=>{
-    return nameItem[getRandom(nameItem.length)]+surnameEnd[getRandom(surnameEnd.length)];
+const getSurname = (nameItem, surnameEnd) => {
+    return nameItem[getRandom(nameItem.length)] + surnameEnd[getRandom(surnameEnd.length)];
 }
 
-export {
-    getCapitalize,
-    getRandom,
-    getMail,
-    getName,
-    getSurname
-}
+export {getCapitalize, getRandom, getMail, getName, getSurname}
