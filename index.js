@@ -1,6 +1,6 @@
 import {domainItem, mailItem} from "./staticData.js";
 import {nameList} from "./nameList.js";
-import {getMail, getName, getRandom, getSurname} from "./function.js";
+import {getMail, getName, getRandom, getSurname,randomDate} from "./function.js";
 
 // console.log(nameList.country.az.gender.length)
 
@@ -18,12 +18,13 @@ const genderList = {
     }
 }
 
+
 const userAdd = () => {
 
-    var name, surname, email, birthday, getGender;
+    let name, surname, email, birthday, getGender;
 
     getGender = genderList.gender.genderName[getRandom(genderList.gender.genderName.length)];
-    birthday = "15.12.1999";
+    birthday  = randomDate(new Date(1975, 0, 1), new Date());
 
     /*
         Real adlar üçün istifa etmək üçün
@@ -58,11 +59,14 @@ const userAdd = () => {
     }
 
     const table = "<tr><td>"+userInfo.name+"</td><td>"+userInfo.surname+"</td><td>"+userInfo.email+"</td><td>"+userInfo.birthday+"</td></tr>";
-    // console.table(table)
 
     document.getElementById("userList").innerHTML += table;
-    console.log(userInfo);
 
+    console.log(userInfo)
 }
 
-setInterval(userAdd, 1000)
+function run(){
+    setInterval(userAdd, 1000)
+}
+
+run()

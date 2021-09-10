@@ -1,11 +1,16 @@
 /**
  * İlk hərifi böyük etmək üçün funksiya
- * @param {*}
  * @returns
+ * @param s
  */
+
 const getCapitalize = (s) => {
     if (typeof s !== 'string') return ''
     return s.charAt(0).toUpperCase() + s.slice(1)
+}
+
+const randomDate = (start, end)=>{
+    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
 }
 
 /**
@@ -20,8 +25,8 @@ const getRandom = (max) => {
 
 /**
  * @getMail fuksiyas e-mail sonluğu yaratmaq üçün istifadə edilir funksiya iki dəyər alır
- * @param {Domain adı  } domainItem
- * @param {Domain sonluğu } mailItem
+ * @param  domainItem
+ * @param  mailItem
  * Dəyərlərə nameList.js fayldan çata bilərsiz
  * @returns Təsadüfü
  */
@@ -50,4 +55,4 @@ const getSurname = (nameItem, surnameEnd) => {
     return nameItem[getRandom(nameItem.length)] + surnameEnd[getRandom(surnameEnd.length)];
 }
 
-export {getCapitalize, getRandom, getMail, getName, getSurname}
+export {getCapitalize, getRandom, getMail, getName, getSurname,randomDate}
