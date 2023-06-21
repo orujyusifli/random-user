@@ -19,7 +19,7 @@ const genderList = {
 
 const userAdd = () => {
 
-    let name, surname, email, birthday, getGender;
+    let name, surname, email, birthday, getGender,gender;
 
     getGender = genderList.gender.genderName[getRandom(genderList.gender.genderName.length)];
     birthday = randomDate(new Date(1975, 0, 1), new Date());
@@ -32,10 +32,12 @@ const userAdd = () => {
         name = getName(genderList.man.manName)
         surname = getSurname(genderList.man.manName, genderList.man.surnameManEnd);
         email = surname.toLowerCase() + getMail(domainItem, mailItem);
+        gender = "Kişi"
     } else {
         name = getName(genderList.woman.womanName)
         surname = getSurname(genderList.man.manName, genderList.woman.surnameWomanEnd);
         email = surname.toLowerCase() + getMail(domainItem, mailItem);
+        gender = "Qadın"
     }
 
 
@@ -45,6 +47,7 @@ const userAdd = () => {
         name: name,
         surname: surname,
         email: email,
+        gender: gender,
         birthday: birthday
     }
 
@@ -52,6 +55,7 @@ const userAdd = () => {
             <td>${id}</td>
             <td>${userInfo.name}</td>
         <td>${userInfo.surname}</td>
+        <td>${userInfo.gender}</td>
         <td>${userInfo.email}</td>
         <td>${userInfo.birthday}</td>
         </tr>`;
