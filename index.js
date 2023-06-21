@@ -1,8 +1,6 @@
 import {domainItem, mailItem} from "./staticData.js";
 import {nameList} from "./nameList.js";
-import {getMail, getName, getRandom, getSurname,randomDate} from "./function.js";
-
-// console.log(nameList.country.az.gender.length)
+import {getMail, getName, getRandom, getSurname, randomDate} from "./function.js";
 
 const genderList = {
     gender: {
@@ -24,13 +22,13 @@ const userAdd = () => {
     let name, surname, email, birthday, getGender;
 
     getGender = genderList.gender.genderName[getRandom(genderList.gender.genderName.length)];
-    birthday  = randomDate(new Date(1975, 0, 1), new Date());
+    birthday = randomDate(new Date(1975, 0, 1), new Date());
 
     /*
         Real adlar üçün istifa etmək üçün
     */
 
-    if (getGender==="man") {
+    if (getGender === "man") {
         name = getName(genderList.man.manName)
         surname = getSurname(genderList.man.manName, genderList.man.surnameManEnd);
         email = surname.toLowerCase() + getMail(domainItem, mailItem);
@@ -41,16 +39,8 @@ const userAdd = () => {
     }
 
 
-    /*
-        Təsadüfü random adlardan istifa etmək üçün
-        */
-
-        // name      = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-        // surname   = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15); 
-        // email     = Math.random().toString(36).substring(2, 15) + getMail(domainItem, mailItem);
-
-    
-
+    let UserCount = parseInt(document.getElementById("UserCount").innerText);
+    let id = eval(UserCount + 1);
     const userInfo = {
         name: name,
         surname: surname,
@@ -58,14 +48,20 @@ const userAdd = () => {
         birthday: birthday
     }
 
-    const table = "<tr><td>"+userInfo.name+"</td><td>"+userInfo.surname+"</td><td>"+userInfo.email+"</td><td>"+userInfo.birthday+"</td></tr>";
+    const table = `<tr>
+            <td>${id}</td>
+            <td>${userInfo.name}</td>
+        <td>${userInfo.surname}</td>
+        <td>${userInfo.email}</td>
+        <td>${userInfo.birthday}</td>
+        </tr>`;
 
     document.getElementById("userList").innerHTML += table;
+    document.getElementById("UserCount").innerText = id;
 
-    console.log(userInfo)
 }
 
-function run(){
+function run() {
     setInterval(userAdd, 1000)
 }
 

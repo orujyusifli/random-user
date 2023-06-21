@@ -1,4 +1,3 @@
-
 const nameList = {
     country: {
         az: {

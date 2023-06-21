@@ -9,7 +9,7 @@ const getCapitalize = (s) => {
     return s.charAt(0).toUpperCase() + s.slice(1)
 }
 
-const randomDate = (start, end)=>{
+const randomDate = (start, end) => {
     return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
 }
 
@@ -55,4 +55,4 @@ const getSurname = (nameItem, surnameEnd) => {
     return nameItem[getRandom(nameItem.length)] + surnameEnd[getRandom(surnameEnd.length)];
 }
 
-export {getCapitalize, getRandom, getMail, getName, getSurname,randomDate}
+export {getCapitalize, getRandom, getMail, getName, getSurname, randomDate}
